@@ -8,8 +8,8 @@ export default function Home(props: HomeProps) {
 
   return (
     <body>
-      {children}
       <h1>{message}</h1>
+      {children}
     </body>
   );
 }
