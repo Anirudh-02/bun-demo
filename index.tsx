@@ -2,16 +2,14 @@ import { renderToReadableStream } from "react-dom/server";
 import { log } from "console";
 import Home from "./components/Home";
 import ChildComp from "./components/DemoChildComp";
+import { getParamFromRequestByName } from "./utils/utils";
 
 const PORT = 3000;
 
 // components
 
 const requestHandler = async (req: Request) => {
-  const url = new URL(req.url);
-  const params = url.searchParams;
-  const message = params.get("message") ?? "default greeting";
-  const messageToShow = decodeURIComponent(message.replace(/%22/g, ""));
+  const messageToShow = getParamFromRequestByName(req, "message");
 
   const stream = await renderToReadableStream(
     <Home message={messageToShow}>
