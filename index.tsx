@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import ChildComp from "./components/DemoChildComp";
 import { getParamFromRequestByName } from "./utils/utils";
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const requestHandler = async (req: Request) => {
   const messageToShow = getParamFromRequestByName(req, "message");
