@@ -4,10 +4,13 @@ import Home from "./components/Home";
 import ChildComp from "./components/DemoChildComp";
 import { getParamFromRequestByName } from "./utils/utils";
 
+const MESSAGE = "message";
 const PORT = process.env.PORT || 3000;
 
+const rootRequestHeaders = { "Content-Type": "text/html" };
+
 const requestHandler = async (req: Request) => {
-  const messageToShow = getParamFromRequestByName(req, "message");
+  const messageToShow = getParamFromRequestByName(req, MESSAGE);
 
   const stream = await renderToReadableStream(
     <Home message={messageToShow}>
@@ -16,7 +19,7 @@ const requestHandler = async (req: Request) => {
   );
 
   return new Response(stream, {
-    headers: { "Content-Type": "text/html" },
+    headers: rootRequestHeaders,
   });
 };
 
