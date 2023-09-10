@@ -1,22 +1,13 @@
 import { renderToReadableStream } from "react-dom/server";
 import { log } from "console";
-import Home from "./components/Home";
-import ChildComp from "./components/DemoChildComp";
-import { getParamFromRequestByName } from "./utils/utils";
+import { App } from "./App";
 
-const MESSAGE = "message";
 const PORT = process.env.PORT || 3000;
 
 const rootRequestHeaders = { "Content-Type": "text/html" };
 
 const requestHandler = async (req: Request) => {
-  const messageToShow = getParamFromRequestByName(req, MESSAGE);
-
-  const stream = await renderToReadableStream(
-    <Home message={messageToShow}>
-      <ChildComp childmsg={messageToShow + "hello from child"} />
-    </Home>,
-  );
+  const stream = await renderToReadableStream(<App req={req} />);
 
   return new Response(stream, {
     headers: rootRequestHeaders,
