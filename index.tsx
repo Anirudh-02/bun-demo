@@ -6,8 +6,6 @@ import { getParamFromRequestByName } from "./utils/utils";
 
 const PORT = 3000;
 
-// components
-
 const requestHandler = async (req: Request) => {
   const messageToShow = getParamFromRequestByName(req, "message");
 
