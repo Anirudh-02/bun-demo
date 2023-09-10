@@ -9,8 +9,8 @@
     "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "bun run index.tsx",
-    "dev": "bun run --watch index.tsx"
+    "start": "bun index.tsx",
+    "dev": "bun --watch index.tsx"
   },
   "dependencies": {
     "@types/react-dom": "latest",
