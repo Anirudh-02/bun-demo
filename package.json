@@ -1,0 +1,20 @@
+{
+  "name": "bun-react",
+  "module": "index.tsx",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "start": "bun run index.tsx",
+    "dev": "bun run --watch index.tsx"
+  },
+  "dependencies": {
+    "@types/react-dom": "latest",
+    "react": "^18.2.0",
+    "react-dom": "latest"
+  }
+}
