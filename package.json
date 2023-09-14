@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@types/react-dom": "latest",
+    "htmx.org": "^1.9.5",
     "react": "^18.2.0",
     "react-dom": "latest"
   }
