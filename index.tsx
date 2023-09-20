@@ -10,28 +10,30 @@ const requestHandler = async (req: Request) => {
   const url = req.url;
   const path = url.split(`${PORT}`).at(1);
 
-  let stream;
+  let streamResponse;
 
   switch (path) {
     case "":
     case "/":
       {
-        stream = await renderToReadableStream(<App req={req} />);
+        streamResponse = await renderToReadableStream(<App req={req} />);
       }
       break;
     case "/clicked":
       {
-        stream = await renderToReadableStream(
+        streamResponse = await renderToReadableStream(
           <span>This is the response</span>,
         );
       }
       break;
     default: {
-      stream = await renderToReadableStream(<div>Page not found: 404</div>);
+      streamResponse = await renderToReadableStream(
+        <div>Page not found: 404</div>,
+      );
     }
   }
 
-  return new Response(stream, {
+  return new Response(streamResponse, {
     headers: rootRequestHeaders,
   });
 };
