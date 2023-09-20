@@ -22,7 +22,7 @@ export const App = (props: AppProps) => {
   const messageToShow = getParamFromRequestByName(req, MESSAGE);
 
   return (
-    <>
+    <html>
       <head>
         <script
           src="https://unpkg.com/htmx.org@1.9.5"
@@ -35,6 +35,6 @@ export const App = (props: AppProps) => {
           <ChildComp childmsg={messageToShow + "hello from child"} />
         </Home>
       </body>
-    </>
+    </html>
   );
 };
