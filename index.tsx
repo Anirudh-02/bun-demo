@@ -1,4 +1,7 @@
-import { renderToReadableStream } from "react-dom/server";
+import {
+  ReactDOMServerReadableStream,
+  renderToReadableStream,
+} from "react-dom/server";
 import { App } from "./App";
 
 const PORT = process.env.PORT || 3000;
@@ -9,7 +12,7 @@ const requestHandler = async (req: Request) => {
   const url = req.url;
   const path = url.split(`${PORT}`).at(1);
 
-  let streamResponse;
+  let streamResponse: ReactDOMServerReadableStream;
 
   switch (path) {
     case "":
