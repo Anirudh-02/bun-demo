@@ -1,5 +1,4 @@
 import { renderToReadableStream } from "react-dom/server";
-import { log } from "console";
 import { App } from "./App";
 
 const PORT = process.env.PORT || 3000;
@@ -45,4 +44,4 @@ const serverInitalizer = {
 
 Bun.serve(serverInitalizer);
 
-log(`server running at http://localhost:${PORT}`);
+console.log(`server running at http://localhost:${PORT}`);
