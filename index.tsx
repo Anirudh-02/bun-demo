@@ -2,7 +2,7 @@ import {
   ReactDOMServerReadableStream,
   renderToReadableStream,
 } from "react-dom/server";
-import { App } from "./App";
+import App from "./App";
 
 const PORT = process.env.PORT || 3000;
 

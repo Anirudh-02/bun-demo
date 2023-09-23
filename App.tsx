@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-export const App = (props: AppProps) => {
+const App = (props: AppProps) => {
   const { req } = props;
   const messageToShow = getParamFromRequestByName(req, MESSAGE);
 
@@ -38,3 +38,5 @@ export const App = (props: AppProps) => {
     </html>
   );
 };
+
+export default App;
